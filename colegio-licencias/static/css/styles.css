@@ -1,0 +1,454 @@
+/* =========================
+   Estilo Moderno & Profesional
+   ========================= */
+
+/* General */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #eef1f6;
+  color: #2c2f36;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #1f3c88, #2e59d9);
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+nav {
+  margin-top: 12px;
+}
+
+nav a {
+  color: #dbeafe;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 4px;
+}
+
+nav a:hover {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+main {
+  padding: 40px 20px;
+  background-color: #fdfdfd;
+  max-width: 1200px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+table th,
+table td {
+  padding: 14px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  font-size: 15px;
+}
+
+table th {
+  background-color: #1f3c88;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+  background-color: #f3f6fc;
+}
+
+/* Flash Messages */
+.flash {
+  padding: 12px 16px;
+  margin: 15px 0;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.flash.success {
+  background-color: #e6f4ea;
+  color: #256029;
+  border-left: 6px solid #2e7d32;
+}
+
+.flash.error {
+  background-color: #fdecea;
+  color: #b71c1c;
+  border-left: 6px solid #d32f2f;
+}
+
+/* Botones de acción */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a[href*="eliminar"],
+a[href*="aceptar"],
+a[href*="rechazar"] {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+a[href*="eliminar"] {
+  background: #fdecea;
+  color: #d32f2f;
+}
+
+a[href*="eliminar"]:hover {
+  background: #f9d3d0;
+  transform: scale(1.05);
+}
+
+a[href*="aceptar"] {
+  background: #e6f4ea;
+  color: #2e7d32;
+}
+
+a[href*="aceptar"]:hover {
+  background: #c8e6c9;
+  transform: scale(1.05);
+}
+
+a[href*="rechazar"] {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+a[href*="rechazar"]:hover {
+  background: #ffe0b2;
+  transform: scale(1.05);
+}
+
+/* Íconos y enlaces */
+.youtube-link img {
+  vertical-align: middle;
+  margin-right: 6px;
+  border-radius: 4px;
+}
+
+/* Login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  background: linear-gradient(135deg, #1f3c88, #4a6fdc);
+  padding: 2rem;
+}
+
+.login-card {
+  background: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.login-card h2 {
+  margin-bottom: 1.5rem;
+  color: #1f3c88;
+  font-weight: 600;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 0.9rem;
+  margin: 0.6rem 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.login-card input:focus {
+  border-color: #1f3c88;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #1f3c88, #4a6fdc);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s ease;
+}
+
+.login-card button:hover {
+  background: linear-gradient(135deg, #162d6a, #3b57c4);
+  transform: scale(1.03);
+}
+
+/* Formularios */
+.form-container {
+  max-width: 550px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px 35px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.styled-form .form-group {
+  margin-bottom: 18px;
+}
+
+.styled-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1f3c88;
+}
+
+.styled-form input,
+.styled-form select,
+.styled-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.styled-form input:focus,
+.styled-form select:focus,
+.styled-form textarea:focus {
+  border-color: #2e59d9;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: linear-gradient(135deg, #1f3c88, #4a6fdc);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #162d6a, #2e59d9);
+  transform: scale(1.03);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #2c2f36;
+  padding: 25px 0;
+  margin-top: 30px;
+  border-top: 1px solid #d1d5db;
+  background: #f9f9f9;
+}
+
+.footer a.facebook-link img {
+  margin-left: 10px;
+  transition: transform 0.2s;
+}
+
+.footer a.facebook-link:hover img {
+  transform: scale(1.15);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* 🎨 Estilos modernos con animación en tablas */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+}
+
+table th, 
+table td {
+  padding: 14px 16px;
+  text-align: left;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+table th {
+  background: linear-gradient(135deg, #1f3c88, #2e59d9);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+table tr {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+table tr:nth-child(even) {
+  background-color: #f7f9fc;
+}
+
+table tr:hover {
+  background: #e8f0fe;
+  transform: scale(1.01);
+}
+
+/* Animación suave al pasar sobre celdas */
+table td:hover {
+  background: #f1f6ff;
+  color: #1f3c88;
+  cursor: pointer;
+}
+/* Botón del toggle */
+#theme-toggle {
+  background: #fff;
+  color: #1f3c88;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+#theme-toggle:hover {
+  background: #e3e3e3;
+}
+
+/* 🌙 Estilos en modo oscuro */
+.dark-mode body {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode header {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+}
+
+.dark-mode nav a {
+  color: #bbdefb;
+}
+
+.dark-mode nav a:hover {
+  color: #fff;
+  border-bottom: 2px solid #90caf9;
+}
+
+.dark-mode main {
+  background: #1e1e1e;
+  color: #f5f5f5;
+}
+
+.dark-mode table {
+  background: #1c1c1c;
+  color: #f5f5f5;
+}
+
+.dark-mode table th {
+  background: linear-gradient(135deg, #1565c0, #1e88e5);
+}
+
+.dark-mode table tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+.dark-mode table tr:hover {
+  background: #2f3c60;
+}
+
+/* Formularios */
+.dark-mode .form-container,
+.dark-mode .login-card {
+  background: #1c1c1c;
+  color: #f5f5f5;
+}
+
+.dark-mode .styled-form input,
+.dark-mode .styled-form select,
+.dark-mode .styled-form textarea {
+  background: #2a2a2a;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.dark-mode .styled-form input:focus,
+.dark-mode .styled-form select:focus,
+.dark-mode .styled-form textarea:focus {
+  border-color: #1976d2;
+}
+
+/* Botones */
+.dark-mode .btn-primary,
+.dark-mode .login-card button {
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
+  color: #fff;
+}
+
+.dark-mode .btn-primary:hover,
+.dark-mode .login-card button:hover {
+  background: linear-gradient(135deg, #1565c0, #0a3570);
+}
+
+/* Footer */
+.dark-mode .footer {
+  background: #1c1c1c;
+  color: #bbb;
+  border-top: 1px solid #333;
+}
+/* ✨ Transición suave entre modos */
+body, header, main, table, th, td, 
+.form-container, .login-card, 
+.footer, .btn-primary, .login-card button {
+  transition: background-color 0.4s ease, 
+              color 0.4s ease, 
+              border-color 0.4s ease, 
+              box-shadow 0.4s ease;
+}

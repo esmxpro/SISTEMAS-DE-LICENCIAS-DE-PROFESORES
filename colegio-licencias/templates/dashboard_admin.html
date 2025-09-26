@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Panel de Administración{% endblock %}
+
+{% block content %}
+  <h2>Bienvenido, {{ session['user_name'] }}</h2>
+
+  <h3>Profesores Registrados</h3>
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Nombre</th>
+      <th>Carnet</th>
+      <th>Turno</th>
+      <th>Especialidad</th>
+      <th>Acciones</th>
+    </tr>
+    {% for profesor in profesores %}
+    <tr>
+      <td>{{ profesor['nombre'] }}</td>
+      <td>{{ profesor['carnet'] }}</td>
+      <td>{{ profesor['turno'] }}</td>
+      <td>{{ profesor['especialidad'] }}</td>
+      <td>
+        <a href="{{ url_for('eliminar_profesor', id=profesor['id']) }}" onclick="return confirm('¿Estás seguro de eliminar al profesor?')">Eliminar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <br>
+  <a href="{{ url_for('register_profesor') }}">➕ Registrar nuevo profesor</a>
+
+  <h3 style="margin-top: 40px;">Solicitudes de Licencia</h3>
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Profesor</th>
+      <th>Desde</th>
+      <th>Hasta</th>
+      <th>Motivo</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+    {% for licencia in licencias %}
+    <tr>
+      <td>{{ licencia['nombre'] }}</td>
+      <td>{{ licencia['fecha_inicio'] }}</td>
+      <td>{{ licencia['fecha_fin'] }}</td>
+      <td>{{ licencia['motivo'] }}</td>
+      <td>{{ licencia['estado'] }}</td>
+      <td>
+        {% if licencia['estado'] == 'En espera' %}
+          <a href="{{ url_for('aceptar_licencia', id=licencia['id']) }}">Aceptar</a> |
+          <a href="{{ url_for('rechazar_licencia', id=licencia['id']) }}">Rechazar</a>
+        {% else %}
+          -
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

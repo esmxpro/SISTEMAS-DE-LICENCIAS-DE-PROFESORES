@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Sistema de Licencias{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    .youtube-link {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s;
+    }
+
+    .youtube-link:hover {
+      color: #ff0000;
+    }
+
+    .youtube-link img {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1>Sistema de Licencias Escolares</h1>
+      <nav>
+        {% if session.get('user_role') %}
+          {% if session['user_role'] == 'admin' %}
+            <a href="{{ url_for('dashboard_admin') }}">Panel Admin</a> |
+          {% endif %}
+          <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+        {% else %}
+          <a href="{{ url_for('login') }}">Iniciar Sesión</a>
+        {% endif %}
+      </nav>
+    </div>
+    <hr>
+
+   <!-- 🔘 Botón para cambiar de tema -->
+   <button id="theme-toggle">🌙 Modo Oscuro</button>
+
+  </header>
+
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>
+      &copy; 2025 Sistema Escolar JAP derechos reservados Y&E
+      · 
+      <a class="Facebook-link" href="https://www.facebook.com/profile.php?id=61578831111755" target="_blank" title="Visitar canal de Facebook">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdu64Kd_uo0jxcd1IvtjkX0TO4rt-k9XFh4A&s" alt="Facebook" width="20" style="vertical-align: middle;">
+      </a>
+    </p>
+  
+ </footer>
+ <script>
+  const toggleButton = document.getElementById("theme-toggle");
+  const rootElement = document.documentElement;
+
+  // Cargar preferencia guardada
+  if (localStorage.getItem("theme") === "dark") {
+    rootElement.classList.add("dark-mode");
+    toggleButton.textContent = "☀️ Modo Claro";
+  }
+
+  toggleButton.addEventListener("click", () => {
+    rootElement.classList.toggle("dark-mode");
+
+    if (rootElement.classList.contains("dark-mode")) {
+      toggleButton.textContent = "☀️ Modo Claro";
+      localStorage.setItem("theme", "dark");
+    } else {
+      toggleButton.textContent = "🌙 Modo Oscuro";
+      localStorage.setItem("theme", "light");
+    }
+  });
+ </script>
+</body>

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}Nueva Solicitud{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f6fb;
+    color: #333;
+  }
+  h2 {
+    color: #5d4b8b;
+    text-align: center;
+  }
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 2em auto; /* Aquí se centra */
+    display: block;
+  }
+  label {
+    display: block;
+    margin-top: 1em;
+    color: #4b3a6b;
+    font-weight: bold;
+  }
+  textarea, input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0.5em;
+    box-sizing: border-box;
+    font-size: 1em;
+  }
+  textarea:focus, input[type="date"]:focus {
+    border-color: #a58dd8;
+    outline: none;
+    box-shadow: 0 0 4px #c8b6ec;
+  }
+  button {
+    margin-top: 1.5em;
+    background-color: #a58dd8;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #8b72c2;
+  }
+  a {
+    display: inline-block;
+    margin-top: 1em;
+    text-decoration: none;
+    color: #5d4b8b;
+    font-weight: bold;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<h2>➕ Nueva Solicitud de Licencia</h2>
+
+<form method="POST">
+  <label for="motivo">Motivo:</label><br>
+  <textarea name="motivo" rows="4" required></textarea><br><br>
+
+  <label for="fecha_inicio">Desde (fecha inicio):</label><br>
+  <input type="date" name="fecha_inicio" min="{{ current_date }}" required><br><br>
+
+  <label for="fecha_fin">Hasta (fecha fin):</label><br>
+  <input type="date" name="fecha_fin" min="{{ current_date }}" required><br><br>
+
+  <button type="submit">Enviar solicitud</button>
+</form>
+
+<p style="text-align: center;">
+  <a href="{{ url_for('dashboard_profesor') }}">← Volver al panel</a>
+</p>
+{% endblock %}

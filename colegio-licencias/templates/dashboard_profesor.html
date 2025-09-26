@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Panel del Profesor{% endblock %}
+
+{% block content %}
+  <h2>Bienvenido, {{ session['user_name'] }}</h2>
+
+  <h3>Mis Solicitudes de Licencia</h3>
+  {% if licencias %}
+    <table border="1" cellpadding="8">
+      <tr>
+        <th>Desde</th>
+        <th>Hasta</th>
+        <th>Motivo</th>
+        <th>Estado</th>
+      </tr>
+      {% for licencia in licencias %}
+      <tr>
+        <td>{{ licencia['fecha_inicio'] }}</td>
+        <td>{{ licencia['fecha_fin'] }}</td>
+        <td>{{ licencia['motivo'] }}</td>
+        <td>{{ licencia['estado'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No has enviado solicitudes aún.</p>
+  {% endif %}
+
+  <p>
+    <a href="{{ url_for('solicitudes') }}">➕ Nueva solicitud</a>
+  </p>
+{% endblock %}

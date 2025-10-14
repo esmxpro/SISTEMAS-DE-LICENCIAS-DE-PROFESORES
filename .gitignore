@@ -1,0 +1,5 @@
+env/
+env/Include
+env/Lib/site-packages
+env/Lib/site-packages/blinker
+env/Scripts

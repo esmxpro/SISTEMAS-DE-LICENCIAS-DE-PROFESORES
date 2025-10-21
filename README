@@ -1,0 +1,57 @@
+📌 Sistema de Pedido de Licencias Docentes
+🎯 Objetivo del Software
+
+Este sistema tiene como finalidad gestionar las solicitudes de licencias de los profesores de forma digital y organizada.
+Permite registrar a los docentes, guardar sus datos personales y facilitar el proceso de solicitud, aprobación y control de licencias laborales, reemplazando procesos manuales o en papel.
+🧠 Tecnologías Utilizadas
+
+🐍 Python — Lenguaje principal del backend
+
+🌐 Flask — Framework web para manejar rutas y lógica del servidor
+
+💾 SQLite — Base de datos ligera para almacenar información de profesores y licencias
+
+🎨 HTML, CSS y JavaScript — Interfaz visual del sistema
+
+🧱 Bootstrap / Tailwind (opcional) — Para el diseño adaptable y moderno
+
+⚙️ Git & GitHub — Control de versiones y colaboración en equipo
+👥 Autores e Integrantes del Equipo
+Nombre:
+
+💻 Desarrolladores: 
+- Esmeralda Gutierrez 
+- Yerani Lizarraga 
+
+🧩 Estructura de la Base de Datos
+
+El sistema cuenta con dos tablas principales:
+
+🧑‍🏫 profesores
+Campo	Tipo	Descripción
+id	INTEGER (PK)	Identificador único del profesor
+nombre	TEXT	Nombre completo
+carnet	TEXT (UNIQUE)	Identificador único de docente
+contrasena	TEXT	Contraseña de acceso
+turno	TEXT	Turno laboral (mañana, tarde, noche)
+especialidad	TEXT	Área o materia de especialización
+📝 licencias
+Campo	Tipo	Descripción
+id	INTEGER (PK)	Identificador de la solicitud
+profesor_id	INTEGER (FK)	Relación con el profesor
+fecha	TEXT	Fecha de solicitud
+motivo	TEXT	Motivo de la licencia
+estado	TEXT (DEFAULT ‘En espera’)	Estado de aprobación
+fecha_inicio	TEXT	Inicio de la licencia
+fecha_fin	TEXT	Fin de la licencia
+
+🌐 Enlace del Despliegue
+Descarga o clona el proyecto desde GitHub
+Abre la carpeta del proyecto en tu editor de preferencia (como VS Code).
+
+Crea y activa un entorno virtual para mantener las dependencias organizadas.
+Crea y activa un entorno virtual para mantener las dependencias organizadas.
+Instala las dependencias necesarias con: pip install -r requirements.txt
+Ejecuta la aplicación para iniciar el servidor local con: python app.py
+Abre tu navegador web y navega a http://localhost:5000 para acceder al sistema de licencias docentes.
+¡Listo! Ahora puedes registrar docentes, solicitar licencias y gestionar aprobaciones de manera digital.
